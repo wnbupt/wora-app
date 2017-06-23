@@ -73,9 +73,5 @@ npm run ionic:serve
 
 1. [Get started with Ionic Framework](http://ionicframework.com/getting-started/)
 
-# Copyright & License
-
-* Code & Docs © 2017 Huan LI \<zixia@zixia.net\>
-* Code released under the Apache-2.0 License
-* Docs released under Creative Commons
-
+## Demo Gif
+![img](https://github.com/wnbupt/wora-app/blob/master/wora-douban.gif)
