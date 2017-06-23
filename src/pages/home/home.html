@@ -1,30 +1,36 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>热映</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-<!-- ion-card *ngFor="let post of posts">
+  <ion-list>
 
-  <ion-card-content
-    [innerHTML]="post.description"
-  >
-  </ion-card-content>
+      <ion-item *ngFor="let film of (films | async)?.subjects" (click)="openDetails(film)">
+        <ion-thumbnail item-start>
+          <img src="{{ film.images.medium }}">
+        </ion-thumbnail>
+        <h2>
+          {{ film.title }}
+          <span *ngFor="let genre of film.genres" class="m-tag">
+            {{ genre }}
+          </span>
+        </h2>
+        <p>
+          <span>导演:</span>
+          <span>{{ film.directors[0].name}}</span>
+        </p>
+        <p>
+          <span>主演:</span>
+          <span *ngFor="let cast of film.casts">
+            {{ cast.name }}
+          </span>
+        </p>
+        <button ion-button clear item-end><span class="m-star">{{ film.rating.average }}</span></button>
+      </ion-item>
 
-</ion-card -->
-
-
-
-<ion-list>
-  <button
-    ion-item
-    *ngFor="let film of (films | async)?.results"
-    (click)="openDetails(film)"
-  >
-    {{ film.title }}
-  </button>
-</ion-list>
+  </ion-list>
 
 </ion-content>

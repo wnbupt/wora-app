@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
 import { Http }     from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
@@ -28,7 +27,7 @@ export class HomePage {
 
   constructor(
     public http:    Http,
-    public navCtrl: NavController,
+    public navCtrl: NavController
   ) {
 
   }
@@ -36,38 +35,14 @@ export class HomePage {
   ngOnInit() {
     // this.initBuptBbsRss()
 
-    this.films = this.http.get('http://swapi.co/api/films')
-                          .map(res => res.json());
+    this.films = this.http.get('https://api.douban.com/v2/movie/in_theaters')
+        .map(res => res.json())
   }
 
   openDetails(film) {
     this.navCtrl.push(DetailPage, {film: film});
   }
-  // @angular/http
-  // initBuptBbsRss() {
-  //   this.http.get(this.rssUrl)
-  //                   .map(res => res.text()) //toJson(res.text()))
-  //                   .subscribe(
-  //                     data => {
 
-  //                       const fixedData = data.replace(
-  //                                                 /href="\\/g,
-  //                                                 'href="#',
-  //                                               )
-  //                                               .replace(
-  //                                                 /src="\//g,
-  //                                                 'src="http://bbs.cloud.icybee.cn/',
-  //                                               )
-  //                       parseString(fixedData, (err, result) => {
-  //                         this.posts = result.rss.channel[0].item
-  //                         console.log(this.posts)
-  //                       })
 
-  //                     },
-  //                     err => {
-  //                       console.log("Oops!", err);
-  //                     }
-  //                   )
-  // }
 
 }
