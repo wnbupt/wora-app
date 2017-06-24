@@ -74,4 +74,7 @@ npm run ionic:serve
 1. [Get started with Ionic Framework](http://ionicframework.com/getting-started/)
 
 ## Demo Gif
+
+if you want to watch the video,[click here](https://v.qq.com/x/page/r0517bmmm36.html)
+
 ![img](https://github.com/wnbupt/wora-app/blob/master/wora-douban.gif)
